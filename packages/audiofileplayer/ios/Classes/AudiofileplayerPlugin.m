@@ -126,6 +126,7 @@ static NSString *const kMediaSkipIntervalSeconds = @"skipIntervalSeconds";
       category = AVAudioSessionCategoryPlayback;
     }
     [[AVAudioSession sharedInstance] setCategory:category error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
     result(nil);
     return;
   } else if ([call.method isEqualToString:kSetPlaybackStateMethod]) {
